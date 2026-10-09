@@ -26,7 +26,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-  
+      - name: Find Dockerfile
+        run: |
+          ls -la
+          find . -type f -iname "*dockerfile*" -o -name "Containerfile"
       - name: Test Dockerfile
         run: |
           docker run --rm \
