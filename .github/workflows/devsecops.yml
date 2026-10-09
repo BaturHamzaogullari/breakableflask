@@ -4,7 +4,10 @@ jobs:
   Dependances:
     runs-on: ubuntu-latest
     steps:
-      - name: Verify requirements file
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify repository files
         run: |
           pwd
           ls -la
